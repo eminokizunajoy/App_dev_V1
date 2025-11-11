@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { prisma } from '@/lib/prisma';
 import { NotificationProvider } from "./contexts/NotificationContext";
 import Notification from "@/components/Notification";
+import HelpButton from "@/components/help/HelpButton";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,9 @@ export default function RootLayout({
         <NotificationProvider>
           {children}
           <Notification />
+          <HelpButton />
         </NotificationProvider>
+
       </body>
     </html>
   );
