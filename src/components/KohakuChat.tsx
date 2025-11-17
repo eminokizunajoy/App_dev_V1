@@ -31,7 +31,10 @@ const KohakuChat: React.FC<KohakuChatProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // メッセージが初期状態(1つ)より多い場合のみスクロールを実行
+    if (messages.length > 1) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [messages, isLoading]);
 
   const handleSend = () => {
@@ -77,7 +80,7 @@ const KohakuChat: React.FC<KohakuChatProps> = ({
             // ★★★ whitespace-pre-wrap を追加して改行を反映 ★★★
             className={`mb-2 p-3 rounded-lg max-w-[85%] text-sm whitespace-pre-wrap ${
               msg.sender === 'user'
-                ? 'ml-auto bg-blue-500 text-white'
+                ? 'ml-auto bg-cyan-500 text-white border border-cyan-700'
                 : 'mr-auto bg-gray-200 text-gray-800'
             }`}
           >
@@ -116,4 +119,3 @@ const KohakuChat: React.FC<KohakuChatProps> = ({
 };
 
 export default KohakuChat;
-
