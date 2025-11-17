@@ -1,12 +1,12 @@
-// src/components/help/HelpButton.tsx
+// src/components/responsive-help/ResponsiveHelpButton.tsx
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import HelpTour from "./HelpTour";
+import ResponsiveHelpTour from "./ResponsiveHelpTour";
 import { HelpStep } from "@/types/help";
 
-const HelpButton: React.FC = () => {
+const ResponsiveHelpButton: React.FC = () => {
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,11 +57,6 @@ const HelpButton: React.FC = () => {
   // Special handling for group assignments create programming page
   if (pathname.includes('/group/') && pathname.includes('/assignments/create-programming')) {
     page = 'group_assignments_create_programming';
-  }
-
-  // Special handling for group coding page
-  if (pathname.startsWith('/group/coding-page/')) {
-    page = 'group/coding-page';
   }
 
   const [isTourOpen, setIsTourOpen] = useState(false);
@@ -137,19 +132,19 @@ const HelpButton: React.FC = () => {
 
   return (
     <>
-      {/* 画面右上に固定表示されるヘルプボタン（ヘッダーの下） */}
+      {/* 画面右上に固定表示されるヘルプボタン（ヘッダーの下） - Responsive size */}
       {!isTourOpen && (
         <div className="help-button-container fixed top-24 right-4 z-[10000]">
           <button
             onClick={handleStartTour}
             disabled={isLoading}
-            className="w-14 h-14 bg-[#b2ebf2] hover:bg-[#D3F7FF] text-black font-bold rounded-full shadow-lg flex items-center justify-center transition duration-300 ease-in-out transform hover:scale-105"
+            className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-[#b2ebf2] hover:bg-[#D3F7FF] text-black font-bold rounded-full shadow-lg flex items-center justify-center transition duration-300 ease-in-out transform hover:scale-105"
             aria-label="ヘルプツアーを開始"
           >
             {isLoading ? (
-              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-black"></div>
+              <div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 border-b-2 border-black"></div>
             ) : (
-              <span className="text-2xl font-bold">?</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold">?</span>
             )}
           </button>
         </div>
@@ -157,7 +152,7 @@ const HelpButton: React.FC = () => {
 
       {/* ヘルプツアーの表示 */}
       {isTourOpen && helpSteps.length > 0 && (
-        <HelpTour steps={helpSteps} onClose={handleCloseTour} />
+        <ResponsiveHelpTour steps={helpSteps} onClose={handleCloseTour} />
       )}
 
       {/* エラーメッセージの表示 */}
@@ -170,4 +165,4 @@ const HelpButton: React.FC = () => {
   );
 };
 
-export default HelpButton;
+export default ResponsiveHelpButton;

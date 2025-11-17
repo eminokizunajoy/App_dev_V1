@@ -18,8 +18,8 @@ export type HelpStep = {
   order: number;
   /** このステップが関連するページ名 */
   page?: string;
-  /** このステップが関連するユーザーロール (admin/member) */
-  role?: 'admin' | 'member';
+  /** このステップが関連するユーザーロール (admin/member/creator/participant) */
+  role?: 'admin' | 'member' | 'creator' | 'participant';
 };
 
 /**

@@ -60,4 +60,13 @@ export const createProgrammingQuestionHelpSteps: HelpStep[] = [
     order: 6,
     page: "CreateProgrammingQuestion",
   },
+  {
+  id: "edit_mode",
+    title: "既存問題の編集",
+    description: "URLに問題IDを指定してアクセスすると編集モードになります。既存の問題を修正して更新することができます。",
+    imagePath: "/images/help/create_programming_question_edit.png",
+    targetSelector: ".edit-mode-indicator",
+    order: 7,
+    page: "CreateProgrammingQuestion",
+  },
 ];

@@ -13,15 +13,19 @@ import { HelpStep } from "../../types/help";
 import { homeHelpSteps } from "./homeHelpSteps";
 import { issueListHelpSteps } from "./issueListHelpSteps";
 import { basicInfoBHelpSteps } from "./basicInfoBHelpSteps";
+import { basicInfoAHelpSteps } from "./basicInfoAHelpSteps";
 import { appliedInfoMorningHelpSteps } from "./appliedInfoMorningHelpSteps";
 import { programmingProblemHelpSteps } from "./programmingProblemHelpSteps";
 import { selectsProblemsHelpSteps } from "./selectsProblemsHelpSteps";
 import { mineIssueListHelpSteps } from "./mineIssueListHelpSteps";
 import { programmingProblemsListHelpSteps } from "./programmingProblemsListHelpSteps";
 import { createProgrammingQuestionHelpSteps } from "./createProgrammingQuestionHelpSteps";
+import { groupAssignmentsCreateProgrammingHelpSteps } from "./groupAssignmentsCreateProgrammingHelpSteps";
 import { groupHelpSteps } from "./groupHelpSteps";
+import { groupCodingPageHelpSteps } from "./groupCodingPageHelpSteps";
 import { unsubmittedAssignmentsHelpSteps } from "./unsubmittedAssignmentsHelpSteps";
 import { eventHelpSteps } from "./eventHelpSteps";
+import { createEventHelpSteps } from "./createEventHelpSteps";
 import { profileHelpSteps } from "./profileHelpSteps";
 
 /**
@@ -33,14 +37,18 @@ export const helpSteps: HelpStep[] = [
   ...homeHelpSteps,
   ...issueListHelpSteps,
   ...basicInfoBHelpSteps,
+  ...basicInfoAHelpSteps,
   ...appliedInfoMorningHelpSteps,
   ...programmingProblemHelpSteps,
   ...selectsProblemsHelpSteps,
   ...mineIssueListHelpSteps,
   ...programmingProblemsListHelpSteps,
   ...createProgrammingQuestionHelpSteps,
+  ...groupAssignmentsCreateProgrammingHelpSteps,
   ...groupHelpSteps,
+  ...groupCodingPageHelpSteps,
   ...unsubmittedAssignmentsHelpSteps,
   ...eventHelpSteps,
+  ...createEventHelpSteps,
   ...profileHelpSteps,
 ];
